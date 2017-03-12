@@ -11,7 +11,7 @@
             console.log("Sea creature "+ creatureName);
 
           // Variable for api URL & key
-          var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+          var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
           creatureName + "&api_key=dc6zaTOxFJmzC&limit=10";
           
           // Method to retrieve data
