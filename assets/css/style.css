@@ -1,0 +1,18 @@
+.jumbotron {
+	margin: 14px;
+	border-radius: 20px;
+	text-align: center;
+
+}
+
+#newButtons {
+	padding: 0 25% 0 25%; 
+}
+
+#creatures-form {
+	padding: 0 25% 0 25%;
+}
+
+#container {
+	margin: 25px;
+}

@@ -1,6 +1,6 @@
       // Variable for data
       var seaCreature = ["Jellyfish", "Corals", "Starfish", "Sea Urchins", "Stingrays", "Marine Worms", "Shrimp", "Squid", "Lobster", "Anemone"];
-      
+
       function displayCreature() {
 
         // On click button 
@@ -34,14 +34,13 @@
                 );
 
               // Display image
-              $("#creatures-view").prepend(image);
+              $("#container").prepend(image);
 
               // Variable for rating
               var rating = (response.data[i].rating);
 
               //Display rating
-              $("#creatures-view").prepend("Rating: ", rating);
-
+              $("#container").prepend("Rating: ", rating);
             }
 
             // Still and animate gif
@@ -73,9 +72,6 @@
 
       }
 
-
-
-
       // Function for displaying Sea Creatures data
       function renderButtons() {
         // Looping through the array of sea creatures
@@ -95,15 +91,19 @@
           var newCreature = $("#creatures-input").val().trim();
           console.log(newCreature);
 
+          // Clearing creatures-input box after submitting
+          $("#creatures-input").val('');
+
+          // Adding new creatures to the array
           seaCreature.push(newCreature);
           console.log(seaCreature);
 
+          // Creating new buttons
           $("<button>")
             .addClass("seaCreature")
             .attr("data-name", newCreature)
             .text(newCreature)
             .appendTo("#newButtons")
-
             
         })
 

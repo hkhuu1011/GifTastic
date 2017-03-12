@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	<!-- Bootstrap link -->
@@ -11,22 +12,27 @@
 	<title>GifTastic</title>
 </head>
 <body>
+	<!-- Jumbotron heading  -->
+	<div class="jumbotron">
+	  <h1>Sea Creatures gif</h1>
+	</div>
+
 	<!-- Buttons for sea creatures -->
 	<div id="newButtons"></div></br>
 
 	<!-- Add more sea creature/buttons -->
 	<form id="creatures-form">
-		<label for="creatures-input">Add Sea Creatures</label>
+		<label for="creatures-input">Add Sea Creature</label>
 		<!-- Input for sea creatures -->
 		<input type="text" id="creatures-input">
 		<!-- Submit sea creatures -->
-		<input id="add-creatures" type="submit" value="Add Sea Creatures">
+		<input id="add-creatures" type="submit" value="Submit">
 	</form></br>
 
 	<!-- Display gif -->
-	<div id="creatures-view"></div>
+	<div id="container"></div>
 
-
+	<!-- jquery link -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="assets/javascript/app.js"></script>
 </body>
