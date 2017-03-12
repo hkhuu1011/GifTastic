@@ -44,27 +44,29 @@
 
             }
 
-            // Pauses gif
-            $(document).on("click", "img[src$='.gif']", function() {
+            // Still and animate gif
+            $(document).unbind('click').on("click", "img[src$='.gif']", function() {
               console.log("gif click");
-            // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-            var state = $(this).attr("data-state");
-            console.log(this);
-            // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-            // Then, set the image's data-state to animate
-            // Else set src to the data-still value
-            if (state === "still") {
-              console.log("state is still");
-              $(this).attr("src", $(this).attr("data-animate"));
-              $(this).attr("data-state", "animate");
-            } else {
-              console.log("state is animate");
-              $(this).attr("src", $(this).attr("data-still"));
-              $(this).attr("data-state", "still");
-            }
+
+              // Pause and unpause
+              var state = $(this).attr("data-state");
+              console.log(this);
+              
+              // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+              // Then, set the image's data-state to animate
+              if (state === "still") {
+                console.log("state is animate");
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+              
+                // Else set src to the data-still value
+              } else {
+                  console.log("state is still");
+                  $(this).attr("src", $(this).attr("data-still"));
+                  $(this).attr("data-state", "still");
+                }
             });
-
-
+          
           })
 
         });
@@ -85,32 +87,27 @@
           $("#newButtons").append(a);
         }
 
-      // Adding new creatures on click
-      $("#add-creatures").on("click", function(event) {
-        console.log('click to add creature');
-        event.preventDefault();
+        // Adding new creatures on click
+        $("#add-creatures").on("click", function(event) {
+          console.log('click to add creature');
+          event.preventDefault();
 
-        var newCreature = $("#creatures-input").val().trim();
-        console.log(newCreature);
+          var newCreature = $("#creatures-input").val().trim();
+          console.log(newCreature);
 
-        seaCreature.push(newCreature);
-        console.log(seaCreature);
+          seaCreature.push(newCreature);
+          console.log(seaCreature);
 
-        $("<button>")
-          .addClass("seaCreature")
-          .attr("data-name", newCreature)
-          .text(newCreature)
-          .appendTo("#newButtons")
+          $("<button>")
+            .addClass("seaCreature")
+            .attr("data-name", newCreature)
+            .text(newCreature)
+            .appendTo("#newButtons")
 
-          
+            
         })
 
-
-      
-
-
-  displayCreature();
-
+displayCreature();
 
       }
   
